@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>ユーザーリストの表示</title>
+    <style>
+      h3 {
+        background-color: red;
+        padding: 8px;
+      }
+      div.user {
+        border: 1px dotted red;
+        margin: 8px;
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      {% block title %}
+      <!--ここにタイトルを表示 -->
+
+      {% endblock %}
+    </h1>
+    <div>
+      {% block contents %}
+      <!-- ここにコンテンツを表示 -->
+
+      {% endblock %}
+    </div>
+  </body>
+</html>

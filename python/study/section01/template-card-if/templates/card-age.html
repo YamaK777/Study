@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <!-- CSS を埋め込む(--①) -->
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+  </head>
+
+  <body>
+    <h1>{{ username }}さんの紹介</h1>
+    <div id="desc">
+      <!-- 年齢によって表示内容を変更する(--②) -->
+      {% if age >= 20 %}
+      <p>年齢は{{ age }}歳です。</p>
+      <p>メールアドレスは{{ email }}です。</p>
+      {% else %}
+      <p>年齢は{{ age }}歳です。</p>
+      <p>未成年のため連絡先は非公開です。</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
