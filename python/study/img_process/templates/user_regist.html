@@ -1,0 +1,30 @@
+<!-- ユーザ登録画面 -->
+{# レイアウトを継承する#}
+{% extends "layout.html" %}
+
+{% block title %}
+ユーザ登録
+{% endblock %}
+
+{% block header %}
+画像処理サービス
+{% endblock %}
+
+{% block contents %}
+<form action="/try_login" method="POST" class="pure-form pure-form-stacked">
+  <legend>ユーザ登録</legend>
+  <fieldset>
+    <label for="id">ユーザーID</label>
+    <input type="number" name="id" id="id" min="0" max="999999">
+    <label for="name">ユーザー名</label>
+    <input type="text" name="name" id="name" maxlength='31'>
+    <label for="password">パスワード</label>
+    <input type="password" name="password" id="password">
+    <button type="submit" class="pure-button pure-button-primary">
+      ユーザ登録</button>
+  </fieldset>
+
+  <form action="/login" method="POST" class="pure-form pure-form-stacked">
+    <input type="submit" class="pure-button pure-button-primary" value="ログイン画面に戻る">
+  </form>
+  {% endblock %}

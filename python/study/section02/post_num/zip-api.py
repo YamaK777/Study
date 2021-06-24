@@ -1,3 +1,5 @@
+# -*- coding: Shift-JIS -*-
+
 from flask import Flask, request
 import sqlite3
 import os

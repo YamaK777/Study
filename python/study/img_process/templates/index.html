@@ -1,0 +1,38 @@
+<!-- メイン画面 -->
+{# レイアウトを継承する#}
+{% extends "layout.html" %}
+
+
+{% block title %}
+画像処理
+{% endblock %}
+
+{% block header %}
+画像処理サービス
+{% endblock %}
+
+{% block contents %}
+<form action="/try_login" method="POST" class="pure-form pure-form-stacked">
+  <h2>{{name}}さん、ようこそ</h2>
+  <legend></legend>
+  <legend>写真ファイルを選んでください。</legend>
+  加工ファイルを選択:<input type="file" name="file" required><br>
+  加工する内容を選択:<select name="process">
+    <option value="null" selected>未選択</option>
+    <option value="mono">モノクロ</option>
+    <option value="edge">エッジ</option>
+    <option value="resize">リサイズ</option>
+  </select>
+  <input type="submit" class="pure-button pure-button-primary" value="加工する">
+</form>
+
+<form action="/logout" method="GET" class="pure-form pure-form-stacked">
+  <legend></legend>
+  <input type="submit" class="pure-button pure-button-primary" value="ログアウト">
+</form>
+
+<form action="/leave" method="GET" class="pure-form pure-form-stacked">
+  <legend></legend>
+  <input type="submit" class="pure-button pure-button-primary" value="退会する">
+</form>
+{% endblock %}

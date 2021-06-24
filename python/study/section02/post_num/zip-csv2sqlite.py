@@ -66,7 +66,7 @@ def read_csv(fname):
 # 事業所用のデータを DB に入れる関数 ---④
 def read_office_csv(fname):
     cur = conn.cursor()
-    file = open(fname)
+    file = open(fname, encoding="shift-jis")
     reader = csv.reader(file)
     for row in reader:
       code = row[7]
@@ -81,7 +81,6 @@ def read_office_csv(fname):
     file.close()
     conn.commit()
     cur.close()
-
 
 
 # CSV ファイルを読む ---⑤

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <link rel="stylesheet" href="/static/css/pure-min.css" />
+</head>
+
+<body>
+  <title>
+    {% block title %}
+    <!--ここにタイトルを表示 -->
+    {% endblock %}
+  </title>
+
+  <body>
+    <h1>
+      {% block header %}
+      <!--ここにタイトルを表示 -->
+      {% endblock %}
+    </h1>
+    <div class="content">
+      {% block contents %}
+      <!-- ここにコンテンツを表示 -->
+      {% endblock %}
+    </div>
+  </body>
+
+</html>
