@@ -11,17 +11,27 @@
 画像処理サービス
 {% endblock %}
 
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <h3 class="{{ category }}">{{ message }}</h3>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
 {% block contents %}
-<form action="/try_login" method="POST" class="pure-form pure-form-stacked">
+<form action="/process_image" method="POST" enctype="multipart/form-data" class="pure-form pure-form-stacked">
   <h2>{{name}}さん、ようこそ</h2>
   <legend></legend>
   <legend>写真ファイルを選んでください。</legend>
-  加工ファイルを選択:<input type="file" name="file" required><br>
-  加工する内容を選択:<select name="process">
-    <option value="null" selected>未選択</option>
-    <option value="mono">モノクロ</option>
-    <option value="edge">エッジ</option>
-    <option value="resize">リサイズ</option>
+  <label for="file" required>加工ファイルを選択</label>
+  <input type="file" name="image" id="imege" required>
+  <label for="process">加工する内容を選択:</label>
+  <select name="process">
+    <option value=-1 selected>未選択</option>
+    <option value=1>モノクロ</option>
+    <option value=2>エッジ</option>
+    <option value=3>リサイズ</option>
   </select>
   <input type="submit" class="pure-button pure-button-primary" value="加工する">
 </form>
@@ -31,7 +41,7 @@
   <input type="submit" class="pure-button pure-button-primary" value="ログアウト">
 </form>
 
-<form action="/leave" method="GET" class="pure-form pure-form-stacked">
+<form action="/delete" method="GET" class="pure-form pure-form-stacked">
   <legend></legend>
   <input type="submit" class="pure-button pure-button-primary" value="退会する">
 </form>

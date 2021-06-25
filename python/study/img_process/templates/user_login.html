@@ -10,23 +10,32 @@
 画像処理サービス
 {% endblock %}
 
-{% block contents %}
 
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <h3 class="{{ category }}">{{ message }}</h3>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+{% block contents %}
 <form action="/try_login" method="POST" class="pure-form pure-form-stacked">
   <legend>ログイン</legend>
   <fieldset>
     <label for="id">ユーザーID</label>
-    <input type="number" name="id" id="id" min="0" max="999999">
+    <input type="number" name="id" id="id" min="0" max="999999" required>
     <label for="name">ユーザー名</label>
-    <input type="text" name="name" id="name" maxlength='31'>
+    <input type="text" name="name" id="name" maxlength="31" required>
     <label for="password">パスワード</label>
-    <input type="password" name="password" id="password">
+    <input type="password" name="password" id="password" required>
     <button type="submit" class="pure-button pure-button-primary">
       ログイン</button>
   </fieldset>
+</form>
 
-  <h3>ユーザ登録</h3>
-  <form action="/register" method="POST" class="pure-form pure-form-stacked">
-    <input type="submit" class="pure-button pure-button-primary" value="新規登録">
-  </form>
-  {% endblock %}
+<form action="/register" method="GET" class="pure-form pure-form-stacked">
+  <legend>ユーザ登録はこちらから</legend>
+  <input type="submit" class="pure-button pure-button-primary" value="新規登録">
+</form>
+{% endblock %}

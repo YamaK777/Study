@@ -1,1 +1,19 @@
 <!-- 加工後の画像表示画面 -->
+{# レイアウトを継承する#}
+{% extends "layout.html" %}
+
+{% block title %}
+ログイン
+{% endblock %}
+
+{% block header %}
+画像処理サービス
+{% endblock %}
+
+{% block contents %}
+<img src = "{{image}}" title="加工後の画像" alt="加工後の画像">
+
+<form action="/" method="GET" class="pure-form pure-form-stacked">
+  <input type="submit" class="pure-button pure-button-primary" value="トップページに戻る">
+</form>
+{% endblock %}

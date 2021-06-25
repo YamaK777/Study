@@ -7,3 +7,11 @@ div#desc {
   padding-left: 3em;
   border: 1px solid blue;
 }
+
+.success {
+  background-color: midnightblue;
+}
+
+.failed {
+  background-color: deeppink;
+}

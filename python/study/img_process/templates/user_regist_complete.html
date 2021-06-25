@@ -1,1 +1,23 @@
 <!-- ユーザ登録完了画面 -->
+{# レイアウトを継承する#}
+{% extends "layout.html" %}
+
+{% block title %}
+登録完了
+{% endblock %}
+
+{% block header %}
+画像処理サービス
+{% endblock %}
+
+{% block contents %}
+<h2>ユーザ登録が完了しました!</h2>
+
+<form action="/" method="GET" class="pure-form pure-form-stacked">
+  <input type="submit" class="pure-button pure-button-primary" value="トップページへ">
+</form>
+
+<form action="/login" method="GET" class="pure-form pure-form-stacked">
+  <input type="submit" class="pure-button pure-button-primary" value="ログイン画面に戻る">
+</form>
+{% endblock %}

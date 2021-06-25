@@ -11,20 +11,20 @@
 {% endblock %}
 
 {% block contents %}
-<form action="/try_login" method="POST" class="pure-form pure-form-stacked">
+<form action="/try_register" method="POST" class="pure-form pure-form-stacked">
   <legend>ユーザ登録</legend>
   <fieldset>
     <label for="id">ユーザーID</label>
-    <input type="number" name="id" id="id" min="0" max="999999">
+    <input type="number" name="id" id="id" min="0" max="999999" required>
     <label for="name">ユーザー名</label>
-    <input type="text" name="name" id="name" maxlength='31'>
+    <input type="text" name="name" id="name" maxlength="31" required>
     <label for="password">パスワード</label>
-    <input type="password" name="password" id="password">
+    <input type="password" name="password" id="password" required>
     <button type="submit" class="pure-button pure-button-primary">
       ユーザ登録</button>
   </fieldset>
-
-  <form action="/login" method="POST" class="pure-form pure-form-stacked">
-    <input type="submit" class="pure-button pure-button-primary" value="ログイン画面に戻る">
-  </form>
+</form>
+<form action="/login" method="GET" class="pure-form pure-form-stacked">
+  <input type="submit" class="pure-button pure-button-primary" value="ログイン画面に戻る">
+</form>
   {% endblock %}
