@@ -1,1 +1,24 @@
 <!-- ユーザ退会確認画面 -->
+{# レイアウトを継承する#}
+{% extends "layout.html" %}
+
+{% block title %}
+ログアウト確認
+{% endblock %}
+
+{% block header %}
+退会の確認
+{% endblock %}
+
+{% block contents %}
+<h2>本当に退会しますか？</h2>
+
+<form action="/try_delete" method="GET" class="pure-form pure-form-stacked">
+  <input type="submit" class="pure-button pure-button-primary" value="はい">
+</form>
+
+<form action="/" method="GET" class="pure-form pure-form-stacked">
+  <input type="submit" class="pure-button pure-button-primary" value="いいえ">
+</form>
+{% endblock %}
+

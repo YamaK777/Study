@@ -10,15 +10,6 @@
 画像処理サービス
 {% endblock %}
 
-
-{% with messages = get_flashed_messages(with_categories=true) %}
-  {% if messages %}
-    {% for category, message in messages %}
-      <h3 class="{{ category }}">{{ message }}</h3>
-    {% endfor %}
-  {% endif %}
-{% endwith %}
-
 {% block contents %}
 <form action="/try_login" method="POST" class="pure-form pure-form-stacked">
   <legend>ログイン</legend>

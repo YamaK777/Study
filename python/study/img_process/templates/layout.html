@@ -16,12 +16,23 @@
   </title>
 
   <body>
+
     <h1>
       {% block header %}
       <!--ここにタイトルを表示 -->
       {% endblock %}
     </h1>
-    <div class="content">
+    <!--エラーメッセージ表示  -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for message in messages %}
+            <li class="message">{{ message }}</>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <div id="content">
       {% block contents %}
       <!-- ここにコンテンツを表示 -->
       {% endblock %}

@@ -10,8 +10,11 @@
 画像処理サービス
 {% endblock %}
 
+
+
 {% block contents %}
-<img src = "{{image}}" title="加工後の画像" alt="加工後の画像">
+<h2>{{process}}加工が完了しました！！</h2>
+<img src = "{{src}}" title="加工後の画像" alt="加工後の画像">
 
 <form action="/" method="GET" class="pure-form pure-form-stacked">
   <input type="submit" class="pure-button pure-button-primary" value="トップページに戻る">
