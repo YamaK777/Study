@@ -41,7 +41,6 @@ def process_cv2(path, process):
 
   # 加工後の画像を保存
   cv2.imwrite(dir,p_image)
-  print(path)
   p_result = [path,messe[process-1]]
   # セッションスコープにdirを格納
   session['image'] = p_result

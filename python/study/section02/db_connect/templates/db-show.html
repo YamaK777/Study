@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+</head>
+
+  <body>
+    <table border="1">
+      <tr>
+        <td>ID</td>
+        <th>名前</th>
+        <th>パスワード</th>
+      </tr>
+      {% for value in users %}
+      <tr>
+        <td>{{ value[0] }}</td>
+        <td>{{ value[1]}}</td>
+        <td>{{ value[2]}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

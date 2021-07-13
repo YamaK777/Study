@@ -87,7 +87,7 @@ def logout():
     return redirect('/login')
 
   # ログアウトできなかった場合
-  flash(message[4][0], message[4][1])
+  flash(message[4][0])
   return redirect('/')
 
 
